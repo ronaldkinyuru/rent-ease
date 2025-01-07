@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 exports.authMiddleware = (req, res, next) => {
 	try {
 		const authHeader = req.headers.authorization;
-		if (!authHeader || !authHeader.startswith('Bearer ')) {
+		if (!authHeader || !authHeader.startsWith('Bearer ')) {
 			return res.status(401).json({ message: 'Authorization token required' });
 		}
 		//extract token 
